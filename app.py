@@ -46,7 +46,7 @@ def PushItem():
             db.session.commit()
             return redirect('/')
         except:
-            return "কোন একটি সমস্যা হয়েছে ।"
+            return "something went wrong"
     else:
         render_template('newitem.html')
 
@@ -60,7 +60,7 @@ def delete(id):
         db.session.commit()
         return redirect('/app')
     except:
-        return "কোন একটি সমস্যা হয়েছে ।"
+        return "something went wrong"
 
 
 @app.route('/update/<int:id>', methods=['POST','GET'])
@@ -76,10 +76,10 @@ def update(id):
             db.session.commit()
             return redirect('/app')
         except:
-            return "কোন একটি সমস্যা হয়েছে ।"
+            return "something went wrong"
     else:
         return render_template('update.html', item=item)
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run()
