@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>বাজার রশিদ</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="appname" class="bg-secondary">
+                    <h1>Shopping List</h1>
+                </div>
+            </div>
+        </div>
+        <div class="form-row" id="myform">
+            <div class="col-md-12">
+                <form action="/update/{{item.id}}" method="POST">
+                    
+                    <div class="form-inline">
+                        <label for="pname">নাম :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" class="form-control" id="pname" placeholder="Name" name="pname" value="{{item.pName}}">
+                    </div>
+                    <div class="form-inline">
+                        <label for="quantity">পরিমান :</label>
+                        <input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity" value="{{item.quantity}}">
+                    </div>
+                    <div class="form-inline">
+                        <label for="price">দাম : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" class="form-control" id="price" placeholder="price" name="price" value="{{item.price}}">
+                    </div>
+                    <div class="form-inline">
+                        <input type="submit" class="btn btn-block btn-primary" role="button" value="Update">
+                        <a href="/app" role="button" class="btn btn-block btn-primary text-white text-center" >Return</a>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}

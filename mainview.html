@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>SHOPLISTER</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="appname" class="bg-secondary">
+                    <h1>Shopping List</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for item in items %}
+                      <tr>
+                        <td>{{item.pName}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.price}}</td>
+                        <td><a href="/delete/{{item.id}}" role="button" class="btn btn-outline-danger">X</a>
+                          <a href="/update/{{item.id}}" role="button" class="btn btn-outline-info">U</a>
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                  <a href="newitem" role="button" id="enter" class="btn btn-primary btn-block">New Item</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

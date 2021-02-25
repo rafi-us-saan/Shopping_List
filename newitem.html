@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>SHOPLISTER</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="appname" class="bg-secondary">
+                    <h1>Shopping List</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item text-center"><h5 class="itemlist">New Item Form</h5></li>
+                </ul>
+                <form action="pushitem" id="myform" name="myform" method="POST">  
+                    <div class="form-inline">
+                        <label for="pname">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" class="form-control" id="pname" placeholder="product name" name="pname" required>
+                    </div>
+                    <div class="form-inline">
+                        <label for="quantity">Quantity: </label>
+                        <input type="text" class="form-control" id="quantity" placeholder="product quantity" name="quantity">
+                    </div>
+                    <div class="form-inline">
+                        <label for="price">Price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" class="form-control" id="price" placeholder="price" name="price">
+                    </div>
+                    <div class="form-inline">
+                        <input type="submit" class="btn btn-block btn-primary" role="button" value="insert">
+                        <a href="app" role="button" class="btn btn-block btn-primary text-white text-center" >Return</a>
+                    </div>
+                    
+                </form>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
